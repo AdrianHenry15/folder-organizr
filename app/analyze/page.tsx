@@ -1,3 +1,4 @@
+import { ClientErrorBoundary } from "@/components/error-boundary/client-error-boundary"
 import { Container } from "@/components/layout/container"
 import { AnalyzeFolderClient } from "@/components/upload/analyze-folder-client"
 
@@ -18,7 +19,9 @@ export default function AnalyzePage() {
         </p>
 
         <div className="mt-8">
-          <AnalyzeFolderClient />
+          <ClientErrorBoundary>
+            <AnalyzeFolderClient />
+          </ClientErrorBoundary>
         </div>
       </Container>
     </main>
